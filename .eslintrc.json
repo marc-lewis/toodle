@@ -1,9 +1,19 @@
 {
   "plugins": [
-      "jsdoc"
+    "jsdoc",
+    "@stylistic/js"
   ],
   "extends": [
     "next/core-web-vitals",
     "plugin:jsdoc/recommended-typescript"
-  ]
+  ],
+  "rules": {
+    "@stylistic/js/semi": [
+      "error",
+      "never",
+      {
+        "beforeStatementContinuationChars": "always"
+      }
+    ]
+  }
 }

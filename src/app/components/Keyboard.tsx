@@ -7,5 +7,5 @@ export default function Keyboard () {
     <div>
       <h1>Keyboard</h1>
     </div>
-  );
+  )
 }
