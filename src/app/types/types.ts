@@ -2,10 +2,10 @@
  * The letterType determines the appearance of the letter in the keyboard and the guesses
  */
 export enum LetterType {
-  NotChecked, // Unused letters in the keyboard, empty guesses or guesses that have not been submitted
   WrongSpace, // Wrong letter in the correct space --> Yellow
   WrongLetter, // Wrong letter in the wrong space --> Grey
   Correct, // Correct letter in the correct space --> Green
+  // null is White background, black text (default)
 }
 
 /**
@@ -14,5 +14,5 @@ export enum LetterType {
  */
 export interface LetterData {
   value: string
-  type: LetterType
+  type: LetterType | null;
 }

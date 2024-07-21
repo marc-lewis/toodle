@@ -6,13 +6,13 @@ import { LetterData, LetterType } from '../types/types';
  */
 export const getLetterAppearance = (letterData: LetterData): string => {
   switch(letterData.type) {
-    case LetterType.NotChecked:
-      return "bg-white text-black";
     case LetterType.WrongSpace:
       return "bg-yellow-500 text-white";
     case LetterType.WrongLetter:
       return "bg-gray-500 text-white";
     case LetterType.Correct:
       return "bg-green-500 text-white";
+    default:
+      return "bg-white text-black";
   }
 };

@@ -4,10 +4,10 @@ import { getLetterAppearance } from '../utils/getLetterAppearance';
 import { LetterData, LetterType } from '../types/types';
 
 describe('getLetterAppearance', () => {
-  it('should return the tailwind classes for a white background and black text for letter data with type NotChecked', () => {
+  it('should return the tailwind classes for a white background and black text for letter data with type null', () => {
     const letterData: LetterData = {
       value: 'A',
-      type: LetterType.NotChecked,
+      type: null,
     };
 
     const result = getLetterAppearance(letterData);
