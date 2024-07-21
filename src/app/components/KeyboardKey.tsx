@@ -15,7 +15,7 @@ const KeyboardKey: React.FC<KeyboardKeyProps> = ({ letterData, index }) => {
       className={`py-2 px-2 border border-black rounded-lg ${appearance}`}
       key={index}
     >
-      {letterData.value.toUpperCase()}
+      {letterData.value?.toUpperCase()}
     </button>
   );
 };

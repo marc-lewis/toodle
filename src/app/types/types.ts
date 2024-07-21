@@ -13,6 +13,6 @@ export enum LetterType {
  * This is used in both the keyboard and the guesses.
  */
 export interface LetterData {
-  value: string
+  value: string | null;
   type: LetterType | null;
 }

@@ -44,7 +44,7 @@ export default function Keyboard () {
     ]
   ];
   return (
-    <section className="flex justify-center">
+    <section className="flex justify-center bg-slate-300">
       <div className="flex flex-col">
       {LetterRows.map((row, i) => {
         return (
