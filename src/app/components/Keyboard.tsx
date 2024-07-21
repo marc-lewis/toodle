@@ -1,15 +1,50 @@
+import React from "react"
+import KeyboardKey from "./KeyboardKey"
+import { LetterData, LetterType } from "../types/types"
+
 /**
  * The Keyboard allows users to tap inputs
  * @returns The Keyboard component
  */
 export default function Keyboard () {
-  const LetterRows = [
-    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "⌫"],
-    ["A", "S", "D", "F", "G", "H", "J", "K", "L", "↵"],
-    ["Z", "X", "C", "V", "B", "N", "M"],
-  ]
+  const LetterRows: LetterData[][] = [
+    [
+      { value: "Q", type: LetterType.WrongSpace },
+      { value: "W", type: LetterType.WrongLetter },
+      { value: "E", type: LetterType.Correct},
+      { value: "R", type: null },
+      { value: "T", type: null },
+      { value: "Y", type: null },
+      { value: "U", type: null },
+      { value: "I", type: null },
+      { value: "O", type: null },
+      { value: "P", type: null },
+      { value: "⌫", type: null }
+    ],
+    [
+      { value: "A", type: null },
+      { value: "S", type: null },
+      { value: "D", type: null },
+      { value: "F", type: null },
+      { value: "G", type: null },
+      { value: "H", type: null },
+      { value: "J", type: null },
+      { value: "K", type: null },
+      { value: "L", type: null },
+      { value: "↵", type: null }
+    ],
+    [
+      { value: "Z", type: null },
+      { value: "X", type: null },
+      { value: "C", type: null },
+      { value: "V", type: null },
+      { value: "B", type: null},
+      { value: "N", type: null },
+      { value: "M", type: null }
+    ]
+  ];
   return (
-    <section className="flex justify-center">
+    <section className="flex justify-center bg-slate-300">
       <div className="flex flex-col">
       {LetterRows.map((row, i) => {
         return (
@@ -19,12 +54,11 @@ export default function Keyboard () {
           >
             {row.map((letter, j) => {
               return (
-                <button
-                  className="py-2 px-2 border border-black rounded-lg"
+                <KeyboardKey
+                  letterData={letter}
+                  index={j}
                   key={j}
-                >
-                  {letter}
-                </button>
+                />
               )
             })}
           </div>
